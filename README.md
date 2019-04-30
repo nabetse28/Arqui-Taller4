@@ -19,6 +19,7 @@ sudo apt-get install android-tools-adb android-tools-fastboot
 ```
 
 3. After these steps clone this repositorie. The only thing you have to do for test the files is change the following files.
+
 **Inside Android.mk:**
 ```Makefile
 LOCAL_MODULE := name_of_test_file
