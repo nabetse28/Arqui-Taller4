@@ -1,9 +1,9 @@
 # Arqui-Taller4
 
-##Information
+## Information
 This lab was about how to run programs in ARM Processor using an android device. In the same way as the [lab3](https://github.com/nabetse28/Arqui-Taller3) we use OMP, also this time we had to use [NEON](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0205j/BABGHIFH.html) and [Android NDK](https://developer.android.com/ndk).
 
-##Installation
+## Installation
 
 1. Install [Android NDK](https://developer.android.com/ndk) this allows to run C code inside your device. It's recommended unzip the file and move it to the directory /opt/:
 
@@ -20,13 +20,15 @@ sudo apt-get install android-tools-adb android-tools-fastboot
 
 3. After these steps clone this repositorie. The only thing you have to do for test the files is change the following files.
    **Inside Android.mk:**
-
-_LOCAL_MODULE_ := name*of_test_file
-\_LOCAL_SRC_FILES* := name_of_test_file.c
+```Makefile
+LOCAL_MODULE := name_of_test_file
+LOCAL_SRC_FILES := name_of_test_file.c
+```
 
 **Inside Application.mk:**
-_APP_MODULES_ := name_of_test_file cpufeatures
-
+```Makefile
+APP_MODULES := name_of_test_file cpufeatures
+```
 4. Inside _jni_ directory, excecute the following command to compile the ndk:
 
 ```bash
@@ -47,13 +49,13 @@ abd push ../libs/armeabi-v7a/name_of_test_file /data/local/tmp
 adb shell /data/local/tmp/name_of_test_file
 ```
 
-##Testing
-###saxpy_serial
+## Testing
+### saxpy_serial
 
-###saxpy_parallel
+### saxpy_parallel
 
-###seno
+### seno
 
-####seno with out parallel
+#### seno with out parallel
 
-####seno with parallel
+#### seno with parallel
